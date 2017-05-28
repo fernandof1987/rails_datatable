@@ -6,8 +6,10 @@ class ProductDatatable < AjaxDatatablesRails::Base
     @view_columns ||= {
         id: { source: "Product.id", cond: :eq },
         description: { source: "Product.description", cond: :like },
-        cost_price: { source: "Product.cost_price", cond: :eq },
-        sale_price: { source: "Product.sale_price", cond: :eq }
+        #subgroup: { source: "Product.product_subgroup.description", cond: :eq },
+        #cost_price: { source: "Product.cost_price", cond: :eq },
+        #sale_price: { source: "Product.sale_price", cond: :eq },
+        #created_at: { source: "Product.created_at", cond: :eq }
     }
   end
 
@@ -19,8 +21,10 @@ class ProductDatatable < AjaxDatatablesRails::Base
           # name: record.name
           id: r.id,
           description: r.description,
+          subgroup: r.product_subgroup.try(:description),
           cost_price: r.cost_price,
-          sale_price: r.sale_price
+          sale_price: r.sale_price,
+          created_at: r.created_at
       }
     end
   end
@@ -28,7 +32,8 @@ class ProductDatatable < AjaxDatatablesRails::Base
   private
 
   def get_raw_records
-    Product.select 'id', 'description', 'cost_price', 'sale_price'
+    #Product.select 'id', 'description', 'cost_price', 'sale_price', 'created_at', 'subgroup.description'
+    Product.all
   end
 
 

@@ -61,3 +61,5 @@ gem 'ajax-datatables-rails', github: 'ajahongir/ajax-datatables-rails', branch: 
 gem 'rails_script'
 gem 'js-routes'
 gem 'responders' # if you are using rails 4.2+
+
+gem 'bootstrap-sass', '~> 3.3.5.1'

@@ -13,9 +13,8 @@ class App.ProductGroups extends App.Base
         ,
           data: "description"
         ]
-        dom: 'B<"clear">lfrtip',
-        #buttons: [ 'copy', 'csv', 'excel' ]
-        buttons: true
-        "scrollY": 300,
-        "scrollX": true
-        "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
+        #dom: 'B<"clear">lfrtip'
+        #buttons: true
+        #"scrollY": 300
+        #"scrollX": true
+        #"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]

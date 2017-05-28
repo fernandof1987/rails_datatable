@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-  resources :products
+  #resources :products
   resources :clients
   resources :users
   resources :product_subgroups
   resources :product_groups
 
+  resources :products do
+    get "delete"
+  end
 
   get '/', to: 'home#index'
 

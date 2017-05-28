@@ -13,13 +13,18 @@ class App.Products extends App.Base
         ,
           data: "description"
         ,
+          data: "subgroup"
+        ,
           data: "cost_price"
         ,
           data: "sale_price"
+        ,
+          data: "created_at"
         ]
-        dom: 'B<"clear">lfrtip',
-        #buttons: [ 'copy', 'csv', 'excel' ]
-        buttons: true
-        "scrollY": 300,
+        dom: 'B<"clear">lfrtip'
+        #buttons: true
+        buttons: ['colvis', 'copy', 'excel', 'pdf', 'csv', 'print']
+        "scrollY": 350
         "scrollX": true
-        "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
+        "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]]
+        colReorder: true

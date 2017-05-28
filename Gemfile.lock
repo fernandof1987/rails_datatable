@@ -50,7 +50,12 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.4)
+    autoprefixer-rails (7.1.1)
+      execjs
     bindex (0.5.0)
+    bootstrap-sass (3.3.5.1)
+      autoprefixer-rails (>= 5.0.0.1)
+      sass (>= 3.3.0)
     builder (3.2.3)
     byebug (9.0.6)
     coffee-rails (4.2.1)
@@ -178,7 +183,9 @@ PLATFORMS
 DEPENDENCIES
   activerecord-sqlserver-adapter
   ajax-datatables-rails!
+  bootstrap-sass (~> 3.3.5.1)
   byebug
+  coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
   jquery-rails
   js-routes

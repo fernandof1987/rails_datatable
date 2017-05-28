@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @product_subgroup.description %>
+</p>
+
+<p>
+  <strong>Product group:</strong>
+  <%= @product_subgroup.product_group %>
+</p>
+
+<%= link_to 'Edit', edit_product_subgroup_path(@product_subgroup) %> |
+<%= link_to 'Back', product_subgroups_path %>

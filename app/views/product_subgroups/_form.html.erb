@@ -1,0 +1,27 @@
+<%= form_for(product_subgroup) do |f| %>
+  <% if product_subgroup.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product_subgroup.errors.count, "error") %> prohibited this product_subgroup from being saved:</h2>
+
+      <ul>
+      <% product_subgroup.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :product_group_id %>
+    <%= f.text_field :product_group_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

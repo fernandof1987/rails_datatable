@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyString
+  product_subgroup: one
+  cost_price: 9.99
+  sale_price: 9.99
+
+two:
+  description: MyString
+  product_subgroup: two
+  cost_price: 9.99
+  sale_price: 9.99

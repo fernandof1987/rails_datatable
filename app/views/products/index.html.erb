@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Products</h1>
+<h1>
+  Products
+  <%= link_to "New Product", new_product_path, remote: true, class: "btn btn-default pull-right" %>
+</h1>
+
 
 <div class="table-responsive">
   <table id="productDataTable" class="table table-striped" cellspacing="0" width="100%">
@@ -12,15 +16,18 @@
       <th>Cost Price</th>
       <th>Sale Price</th>
       <th>Created At</th>
+      <th>Edit</th>
+      <th>Delete</th>
     </tr>
     </thead>
-    <tbody></tbody>
+    <div class="product-index">
+      <%= render "index" %>
+    </div>
+
   </table>
 </div>
 
 <br>
-
-<%= link_to "New Product", new_product_path, remote: true, class: "btn btn-default" %>
 
 <div id="product-modal" class="modal fade"></div>
 
@@ -29,9 +36,11 @@
 
     $('#productDataTable').on( 'key', function ( e, datatable, key, cell, originalEvent ) {
         if ( key == 13 ) {
-            var r = datatable.row( cell.index().row ).data();
-            alert(r.id + ' - ' + r.description);
-            console.log(r);
+            var product = datatable.row( cell.index().row ).data();
+            console.log(product);
+            //alert(r.id + ' - ' + r.description);
+            //console.log(r);
+
         }
     });
 

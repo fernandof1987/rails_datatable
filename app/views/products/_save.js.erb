@@ -1,9 +1,31 @@
 $("ul.errors").html("")
 <% if @product.errors.any? %>
-  <% @product.errors.full_messages.each do |message| %>
-    $("ul.errors").append($("<li />").html("<%= message.html_safe %>"))
-  <% end %>
+<% @product.errors.full_messages.each do |message| %>
+$("ul.errors").append($("<li />").html("<%= message.html_safe %>"))
+<% end %>
 <% else %>
   $(".product-index").html("<%= escape_javascript(render 'index') %>")
+  /*
+  var table = $("#productDataTable").DataTable({
+      ajax: "data.json"
+  });
+  table.ajax.reload();
+  console.log(table);
+  */
+
+  if ( $.fn.dataTable.isDataTable( '#productDataTable' ) ) {
+      table = $('#productDataTable').DataTable();
+      table.ajax.reload()
+      //alert('if')
+  }
+  /*
+  else {
+      table = $('#productDataTable').DataTable( {
+          //paging: false
+      } );
+      alert('else')
+  }
+  */
+
   $("#product-modal").modal("hide")
 <% end %>

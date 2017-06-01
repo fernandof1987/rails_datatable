@@ -20,6 +20,10 @@ class App.Products extends App.Base
           data: "sale_price"
         ,
           data: "created_at"
+        ,
+          data: "edit"
+        ,
+          data: "delete"
         ]
         dom: 'B<"clear">lfrtip'
         #buttons: true

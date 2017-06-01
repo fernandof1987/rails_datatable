@@ -14,17 +14,21 @@ class ProductDatatable < AjaxDatatablesRails::Base
   end
 
   def data
-    records.map do |r|
+    records.map do |product|
       {
           # example:
           # id: record.id,
           # name: record.name
-          id: r.id,
-          description: r.description,
-          subgroup: r.product_subgroup.try(:description),
-          cost_price: r.cost_price,
-          sale_price: r.sale_price,
-          created_at: r.created_at
+          id: product.id,
+          description: product.description,
+          subgroup: product.product_subgroup.try(:description),
+          cost_price: product.cost_price,
+          sale_price: product.sale_price,
+          created_at: product.created_at,
+          edit: "<a href='/products/#{product.id}/edit' data-remote='true'>Edit</a>",
+          #delete: "<a href='/products/#{product.id}/delete' data-remote='true'>Delete</a>"
+          delete: "<a href='/products/#{product.id}/delete' data-remote='true'>Delete</a>"
+
       }
     end
   end
